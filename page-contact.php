@@ -1,25 +1,21 @@
 <?php get_header(); ?>
 
   <section class="keyVisual keyVisualUnder">
-    <h2 class="keyCatch">News</h2>
+    <h2 class="keyCatch">Contact</h2>
   </section>
 
   <div class="inner">
     <main class="main">
-      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <h2 class="newsTitle"><?php the_title(); ?></h2>
-      <div class="newsDate"><?php echo get_the_date(); ?></div>
-      <div class="newsCap">
-        <?php if (has_post_thumbnail()) : ?>
-          <?php the_post_thumbnail('full'); ?>
-        <?php else : ?>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/no_image.jpg" alt="">
-        <?php endif; ?>
-      </div>
       <div class="newsText">
-        <?php the_content(); ?>
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+          <?php the_content(); ?>
+        <?php endwhile; endif; ?>
       </div>
-      <?php endwhile; endif; ?>
+
+      <div class="mapArea" style="margin-top: 30px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12961.947584801825!2d139.6921007!3d35.6896342!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf1665c37f38661e8!2z5p2x5Lqs6YO95bqB!5e0!3m2!1sja!2sjp!4v1533620309022" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
     </main>
 
     <aside class="sidebar">
